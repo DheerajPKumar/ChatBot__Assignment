@@ -1,13 +1,13 @@
+@import "./sass/colors";
 @import "./sass/navbar";
+@import "./sass/_popup";
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-color: #fff;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+body {
+    font-family: "Source Sans Pro", sans-serif;
 }
-

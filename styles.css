@@ -1,10 +1,11 @@
 .header {
   border-bottom: 1px solid rgb(234, 238, 243);
   width: 100%;
+  margin: 0 auto;
 }
 .header__container {
   width: 100%;
-  height: 80px;
+  height: 90px;
   max-width: 1360px;
   display: flex;
   align-items: center;
@@ -57,7 +58,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 .header__container-loginbtn:hover {
-  background-color: #111;
+  background-color: #000;
   color: #fff;
   border: none;
 }
@@ -73,6 +74,92 @@
   cursor: pointer;
 }
 
+.popup {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  height: 224px;
+  transition: all 0.3s;
+}
+.popup__container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.popup__container-details {
+  width: 240px;
+  margin: 20px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transition: all 0.3s;
+}
+.popup__container-crossicondiv {
+  margin-bottom: 10px;
+  opacity: 1;
+}
+.popup__container-crossicon {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.popup__container-crossicon:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.popup__container-icon {
+  padding: 10px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.popup__container-text {
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  border-radius: 6px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  padding: 15px 20px;
+  width: 100%;
+  line-height: 22px;
+  text-align: left;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+.popup__container-text:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.17);
+}
+.popup__container-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  margin: 20px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+.popup__container-logo:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.26);
+}
+.popup__container-image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: opacity 0.2s ease-in-out;
+}
+.popup__container-image:hover {
+  opacity: 0.8;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -80,6 +167,5 @@
 }
 
 body {
-  background-color: #fff;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }/*# sourceMappingURL=styles.css.map */
