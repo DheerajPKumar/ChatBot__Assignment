@@ -1,3 +1,78 @@
+.header {
+  border-bottom: 1px solid rgb(234, 238, 243);
+  width: 100%;
+}
+.header__container {
+  width: 100%;
+  height: 80px;
+  max-width: 1360px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+.header__container-logo {
+  margin-top: 0.5rem;
+}
+.header__container-navbar {
+  margin-left: 2.5rem;
+  margin-right: auto;
+}
+.header__container-list {
+  display: flex;
+  align-items: center;
+}
+.header__container-listitem {
+  display: flex;
+  align-items: center;
+  margin: auto 0.75rem;
+}
+.header__container-text {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+}
+.header__container-arrow {
+  font-size: 1.3rem;
+  padding-top: 0.2rem;
+  cursor: pointer;
+}
+.header__container-loginsignup {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+.header__container-loginbtn {
+  border: 1px solid #000;
+  min-width: 6rem;
+  padding: 0.5rem 1rem;
+  margin-right: 0.8rem;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.header__container-loginbtn:hover {
+  background-color: #111;
+  color: #fff;
+  border: none;
+}
+.header__container-signupbtn {
+  background-color: #ff2b00;
+  border: 1px solid #ff2b00;
+  color: #fff;
+  min-width: 6rem;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,5 +81,5 @@
 
 body {
   background-color: #fff;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }/*# sourceMappingURL=styles.css.map */
