@@ -1,9 +1,11 @@
 @import "./colors";
 
 .header {
+    position: absolute;
     border-bottom: 1px solid $nav-broderColor;
     width: 100%;
     margin: 0 auto;
+    z-index: -10000;
 
     &__container {
         width: 100%;

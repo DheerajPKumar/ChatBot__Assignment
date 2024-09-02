@@ -7,6 +7,7 @@
     width: 280px;
     height: 224px;
     transition: all 0.3s;
+    transform: translateY(0);
 
     &__container {
         display: flex;
@@ -25,10 +26,7 @@
 
         &-crossicondiv {
             margin-bottom: 10px;
-            opacity: 1;
-        }
-
-        &-crossicon {
+            opacity: 0;
             background-color: $crossicon-bg;
             color: $whiteColor;
             display: flex;
@@ -71,6 +69,9 @@
         }
 
         &-logo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
             width: 60px;
             height: 60px;
             border-radius: 100%;

@@ -1,0 +1,312 @@
+@import "./colors";
+
+.chatbox{
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    width: 410px;
+    height: 569px;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: all 0.3s;
+
+    &__container{
+        width: 370px;
+        height: 530px;
+        margin: 20px;
+        box-shadow: 0 4px 16px $chat-shadow;
+        border-radius: 15px;
+        overflow: hidden;
+        
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+
+        &-header{
+            background-color: $whiteColor;
+            position: relative;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+
+            &--crossicon{
+                position: absolute;
+                top: 18px;
+                right: 18px;
+            }
+
+            &--icon{
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            &--icon:hover{
+                opacity: 0.5;
+            }
+
+            &--logo{
+                width: 60px;
+                height: 60px;
+                margin-right: 22px;
+            }
+
+            &--logocontainer{
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+            &--status{
+                height: 10px;
+                width: 10px;
+                background-color: $active-status;
+                border:1px solid $whiteColor;
+                border-radius: 100%;
+                position: absolute;
+                bottom: 7%;
+                right: 7%;
+            }
+
+            &--imagecontainer{
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                overflow: hidden;
+                box-shadow: 0 0 7px 0 $chatlogo-shadow;
+            }
+
+            &--image{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            &--maintext{
+                font-size: 24px;
+                line-height: 31px;
+                font-weight: 600;
+                
+            }
+            &--description{
+                color: $chat-secondaryText;
+                line-height: 19px;
+            }
+        }
+
+        &-chatarea{
+            height: 345px;
+            overflow-y: scroll;
+            width: 100%;
+            background-color: $chatarea-bg;
+
+            &--chatdetails{
+                padding: 10px 25px;
+            }
+
+            &--upper{
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+            &--imagecontainer{
+                width: 18px;
+                height: 18px;
+                border-radius: 100%;
+                margin-right: 6px;
+                overflow: hidden;
+            }
+
+            &--image{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            &--text{
+                color: $chatarea-text;
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            &--lower{
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            &--first{
+                width: fit-content;
+                background-color: $whiteColor;
+                padding: 15px;
+                border-radius: 20px;
+                border-bottom-left-radius: 3px;
+            }
+
+            &--second{
+                width: fit-content;
+                background-color: $whiteColor;
+                padding: 15px;
+                border-radius: 20px;
+                border-top-left-radius: 3px;
+            }
+
+            &--third{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin: 0 30px;
+            }
+
+            &--option{
+                background-color: $whiteColor;
+                padding: 4px 15px;
+                color: $footer-link;
+                border: 1px solid $footer-link;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+
+            &--fourth{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            &--user{
+                padding: 10px 5px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            &--usertext{
+                color: $whiteColor;
+                font-size: 16px;
+                line-height: 18px;
+                background-color: $footer-link;
+                padding: 15px 15px;
+                margin-top: 5px;
+                border-radius: 20px;
+                border-bottom-right-radius: 4px;
+            }
+            
+            &--fifth{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                display: none;
+            }
+
+            &--fifthdo{
+                margin-top: 10px;
+                background-color: $whiteColor;
+                padding: 15px;
+                border-radius: 20px;
+                border-bottom-left-radius: 3px;
+            }
+
+            &--message1, &--message2{
+                margin-top: 10px;
+            }
+
+            &--navigation{
+                width: 100%;
+                margin: 0 auto;
+                height: 50px;
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            &--button1, &--button2{
+                background-color: $whiteColor;
+                padding: 8px 15px;
+                border: 1px solid $footer-link;
+                outline: none;
+                font-size: 14px;
+                font-weight: 700;
+                color: $footer-link;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+
+            &--startchat{
+                background-color: $footer-link;
+                color: $whiteColor;
+                padding: 12px 20px;
+                border: 0;
+                outline: none;
+                font-size: 16px;
+                font-weight: 700;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+
+        &-messages{
+            background-color: $whiteColor;
+            border-top: 1px solid $messages-bg;
+            height: 50px;
+            padding-right: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            &--input{
+                font-size: 16px;
+                line-height: 20px;
+                height: 100%;
+                width: 100%;
+                padding: 0 20px;
+                border: 0;
+                background-color: $whiteColor;
+            }
+
+            &--input::placeholder{
+                color: $placeholder-text;
+            }
+
+            &--sendbtn{
+                font-size: 1.2rem;
+                cursor: pointer;
+                color: $chat-secondaryText;
+                transition: color 0.2s ease-in-out;
+            }
+
+            &--sendbtn:hover{
+                color: $blackColor;
+            }
+        }
+
+        &-footer{
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid $footer-border;
+            background-color: $footer-bg;
+            height: 35px;
+
+            &--text{
+                color: $chat-secondaryText;
+            }
+            
+            &--link{
+                text-decoration: none;
+                color: $footer-link;
+            }
+        }
+    }
+}

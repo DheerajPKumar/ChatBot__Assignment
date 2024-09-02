@@ -46,9 +46,7 @@
             <section class="popup__container">
                 <div class="popup__container-details">
                     <div class="popup__container-crossicondiv">
-                        <div class="popup__container-crossicon">
-                            <i class="ri-close-line popup__container-icon"></i>
-                        </div>
+                        <i class="ri-close-line popup__container-icon"></i>
                     </div>
                     <div class="popup__container-text">
                         🙌 Welcome back! How may I help you today? 🤖
@@ -59,6 +57,76 @@
                 </div>
             </section>
         </div>
+
+        <div class="chatbox">
+            <section class="chatbox__container">
+                <div class="chatbox__content">
+                    <header class="chatbox__content-header">
+                        <div class="chatbox__content-header--crossicon">
+                            <i class="ri-close-line popup__container-icon chatbox__content-header--icon"></i>
+                        </div>
+                        <div class="chatbox__content-header--logo">
+                            <div class="chatbox__content-header--logocontainer">
+                                <div class="chatbox__content-header--status"></div>
+                                <div class="chatbox__content-header--imagecontainer">
+                                    <img class="chatbox__content-header--image" src="./assets/icon.png" alt="avatar">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chatbox__content-header--details">
+                            <div class="chatbox__content-header--maintext">ChatBot</div>
+                            <div class="chatbox__content-header--description">Online</div>
+                        </div>
+                    </header>
+                    <section class="chatbox__content-chatarea">
+                        <div class="chatbox__content-chatarea--chatdetails">
+                            <div class="chatbox__content-chatarea--upper">
+                                <div class="chatbox__content-chatarea--imagecontainer">
+                                    <img src="./assets/icon.png" alt="logoimage" class="caption__avatar--image chatbox__content-chatarea--image">
+                                </div>
+                                <span class="chatbox__content-chatarea--text">ChatBot</span>
+                            </div>
+                            <div class="chatbox__content-chatarea--lower">
+                                <div class="chatbox__content-chatarea--first">"Hi! I'm Mr. Chatbot 😎 Nice to meet you! 👋"</div>
+                                <div class="chatbox__content-chatarea--second">What information are you looking for?</div>
+                                <div class="chatbox__content-chatarea--third">
+                                    <div class="chatbox__content-chatarea--temperature chatbox__content-chatarea--option">🌡️Temperature</div>
+                                    <div class="chatbox__content-chatarea--time chatbox__content-chatarea--option">🕛Time</div>
+                                    <div class="chatbox__content-chatarea--wind chatbox__content-chatarea--option">🎐Wind Speed</div>
+                                    <div class="chatbox__content-chatarea--weather chatbox__content-chatarea--option">⛅Weather Status</div>
+                                </div>
+                                <div class="chatbox__content-chatarea--fourth">
+
+                                </div>
+                                <div class="chatbox__content-chatarea--fifth">
+                                    <div class="chatbox__content-chatarea--fifthup chatbox__content-chatarea--upper">
+                                        <div class="caption__avatar--content chatbox__content-chatarea--imagecontainer">
+                                            <img src="./assets/icon.png" alt="logoimage" class="caption__avatar--image chatbox__content-chatarea--image">
+                                        </div>
+                                        <span class="caption__text chatbox__content-chatarea--text">ChatBot</span>
+                                    </div>
+                                    <div class="chatbox__content-chatarea--fifthdo">
+                                        'Please enter your city name in the typing area! 😊'
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="chatbox__content-messages">
+                        <input for="send" type="text" placeholder="Type your message here" maxlength="256" class="chatbox__content-messages--input" disabled>
+                        <i class="ri-send-plane-2-fill chatbox__content-messages--sendbtn" id="send"></i>
+                    </section>
+                    <footer class="chatbox__content-footer">
+                        <span class="chatbox__content-footer--details">
+                            <span class="chatbox__content-footer--text">Powered by</span>
+                            <a href="#" class="chatbox__content-footer--link">Chatbot</a>
+                        </span>
+                    </footer>
+                </div>
+            </section>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
