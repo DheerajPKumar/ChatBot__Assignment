@@ -44,6 +44,8 @@ chaticonDiv.addEventListener("click", () => {
 
 tempEl.addEventListener("click", () => {
     inputEl.removeAttribute("disabled");
+    inputEl.focus();
+    inputEl.style.outline = 'none';
     optionsEl.style.display = "none";
     chatContainer.style.display = 'block';
     userDiv.innerText = "You";
@@ -59,6 +61,8 @@ tempEl.addEventListener("click", () => {
 
 timeEl.addEventListener("click", () => {
     inputEl.removeAttribute("disabled");
+    inputEl.focus();
+    inputEl.style.outline = 'none';
     optionsEl.style.display = "none";
     chatContainer.style.display = 'block';
     userDiv.innerText = "You";
@@ -74,6 +78,8 @@ timeEl.addEventListener("click", () => {
 
 windEl.addEventListener("click", () => {
     inputEl.removeAttribute("disabled");
+    inputEl.focus();
+    inputEl.style.outline = 'none';
     optionsEl.style.display = "none";
     userDiv.innerText = "You";
     chatContainer.style.display = 'block';
@@ -89,6 +95,8 @@ windEl.addEventListener("click", () => {
 
 weatEl.addEventListener("click", () => {
     inputEl.removeAttribute("disabled");
+    inputEl.focus();
+    inputEl.style.outline = 'none';
     optionsEl.style.display = "none";
     chatContainer.style.display = 'block';
     userDiv.innerText = "You";
@@ -115,7 +123,7 @@ optionsEl.addEventListener('click', function(event) {
 let inputText;
 inputEl.addEventListener("input", () => {
     inputText = "";
-    inputText = inputEl.value
+    inputText = inputEl.value;
 });
 
 inputEl.addEventListener("keydown", (event) => {
