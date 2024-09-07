@@ -57,7 +57,6 @@ tempEl.addEventListener("click", () => {
     userDiv.appendChild(textdiv);
     chatContainer.appendChild(userDiv);
     leftContainer.style.display = "block";
-    chatContainer.scrollTop = chatContainer.scrollHeight;
 });
 
 timeEl.addEventListener("click", () => {
@@ -74,7 +73,6 @@ timeEl.addEventListener("click", () => {
     userDiv.appendChild(textdiv);
     chatContainer.appendChild(userDiv);
     leftContainer.style.display = "block";
-    chatContainer.scrollTop = chatContainer.scrollHeight;
 });
 
 windEl.addEventListener("click", () => {
@@ -91,7 +89,6 @@ windEl.addEventListener("click", () => {
     userDiv.appendChild(textdiv);
     chatContainer.appendChild(userDiv);
     leftContainer.style.display = "block";
-    chatContainer.scrollTop = chatContainer.scrollHeight;
 });
 
 weatEl.addEventListener("click", () => {
@@ -108,7 +105,6 @@ weatEl.addEventListener("click", () => {
     userDiv.appendChild(textdiv);
     chatContainer.appendChild(userDiv);
     leftContainer.style.display = "block";
-    chatContainer.scrollTop = chatContainer.scrollHeight;
 });
 
 optionsEl.addEventListener('click', function(event) {
@@ -209,7 +205,6 @@ sendBtn.addEventListener("click", () => {
 
             leftContainer.appendChild(userDatadiv);
             leftContainer.appendChild(fetchDataDiv);
-            leftContainer.scrollTop = leftContainer.scrollHeight;
 
             let yesBtn = fetchDataDiv.querySelector('.chatbox__content-chatarea--button1');
             let noBtn = fetchDataDiv.querySelector('.chatbox__content-chatarea--button2');
@@ -290,7 +285,6 @@ sendBtn.addEventListener("click", () => {
                 });
 
                 leftContainer.appendChild(fetchDataDiv);
-                leftContainer.scrollTop = leftContainer.scrollHeight;
             });
 
             noBtn.addEventListener('click', () => {
@@ -338,7 +332,6 @@ sendBtn.addEventListener("click", () => {
 
                 leftContainer.appendChild(userDatadiv);
                 leftContainer.appendChild(fetchDataDiv);
-                leftContainer.scrollTop = leftContainer.scrollHeight;
             });
 
             inputEl.value = "";
