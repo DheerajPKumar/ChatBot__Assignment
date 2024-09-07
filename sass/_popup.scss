@@ -1,11 +1,9 @@
-@import "./colors";
-
 .popup {
     position: fixed;
     right: 0;
     bottom: 0;
-    width: 280px;
-    height: 224px;
+    width: rem(280px);
+    height: rem(224px);
     transition: all 0.3s;
     transform: translateY(0);
 
@@ -15,8 +13,8 @@
         align-items: end;
 
         &-details {
-            width: 240px;
-            margin: 20px;
+            width: rem(240px);
+            margin: rem(20px);
             margin-bottom: 0;
             display: flex;
             flex-direction: column;
@@ -25,15 +23,15 @@
         }
 
         &-crossicondiv {
-            margin-bottom: 10px;
+            margin-bottom: rem(10px);
             opacity: 0;
             background-color: $crossicon-bg;
             color: $whiteColor;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 20px;
-            height: 20px;
+            width: rem(20px);
+            height: rem(20px);
             transition: all 0.3s;
             border-radius: 50%;
             cursor: pointer;
@@ -44,7 +42,7 @@
         }
 
         &-icon {
-            padding: 10px;
+            padding: rem(10px);
             text-align: center;
             font-size: 1.1rem;
         }
@@ -52,19 +50,19 @@
         &-text {
             background-color: $whiteColor;
             color: $blackColor;
-            font-size: 16px;
-            border-radius: 6px;
-            box-shadow: 0 5px 20px $popup-textColor;
+            font-size: rem(16px);
+            border-radius: rem(6px);
+            box-shadow: 0 rem(5px) rem(20px) $popup-textColor;
             transition: box-shadow 0.3s;
-            padding: 15px 20px;
+            padding: rem(15px) rem(20px);
             width: 100%;
-            line-height: 22px;
+            line-height: rem(22px);
             text-align: left;
             word-wrap: break-word;
             cursor: pointer;
 
             &:hover {
-                box-shadow: 0 5px 20px $popup-hover;
+                box-shadow: 0 rem(5px) rem(20px) $popup-hover;
             }
         }
 
@@ -72,16 +70,16 @@
             position: fixed;
             right: 0;
             bottom: 0;
-            width: 60px;
-            height: 60px;
+            width: rem(60px);
+            height: rem(60px);
             border-radius: 100%;
-            margin: 20px;
+            margin: rem(20px);
             overflow: hidden;
             transition: box-shadow 0.2s ease-in-out;
             cursor: pointer;
 
             &:hover {
-                box-shadow: 0 0 10px 0 $logo-shadow;
+                box-shadow: 0 0 rem(10px) 0 $logo-shadow;
             }
         }
 

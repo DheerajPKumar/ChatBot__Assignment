@@ -1,21 +1,19 @@
-@import "./colors";
-
 .chatbox{
     position:fixed;
     right: 0;
     bottom: 0;
-    width: 410px;
-    height: 569px;
+    width: rem(410px);
+    height: rem(569px);
     z-index: 1000;
     transform: translateY(100%);
     transition: all 0.3s;
 
     &__container{
-        width: 370px;
-        height: 530px;
-        margin: 20px;
-        box-shadow: 0 4px 16px $chat-shadow;
-        border-radius: 15px;
+        width: rem(370px);
+        height: rem(530px);
+        margin: rem(20px);
+        box-shadow: 0 rem(4px) rem(16px) $chat-shadow;
+        border-radius: rem(15px);
         overflow: hidden;
         
     }
@@ -27,16 +25,16 @@
         &-header{
             background-color: $whiteColor;
             position: relative;
-            height: 100px;
+            height: rem(100px);
             width: 100%;
             display: flex;
             align-items: center;
-            padding: 0 24px;
+            padding: 0 rem(24px);
 
             &--crossicon{
                 position: absolute;
-                top: 18px;
-                right: 18px;
+                top: rem(18px);
+                right: rem(18px);
             }
 
             &--icon{
@@ -49,9 +47,9 @@
             }
 
             &--logo{
-                width: 60px;
-                height: 60px;
-                margin-right: 22px;
+                width: rem(60px);
+                height: rem(60px);
+                margin-right: rem(22px);
             }
 
             &--logocontainer{
@@ -61,10 +59,10 @@
             }
 
             &--status{
-                height: 10px;
-                width: 10px;
+                height: rem(10px);
+                width: rem(10px);
                 background-color: $active-status;
-                border:1px solid $whiteColor;
+                border: rem(1px) solid $whiteColor;
                 border-radius: 100%;
                 position: absolute;
                 bottom: 7%;
@@ -76,7 +74,7 @@
                 height: 100%;
                 border-radius: 100%;
                 overflow: hidden;
-                box-shadow: 0 0 7px 0 $chatlogo-shadow;
+                box-shadow: 0 0 rem(7px) 0 $chatlogo-shadow;
             }
 
             &--image{
@@ -86,38 +84,38 @@
             }
 
             &--maintext{
-                font-size: 24px;
-                line-height: 31px;
+                font-size: rem(24px);
+                line-height: rem(31px);
                 font-weight: 600;
                 
             }
             &--description{
                 color: $chat-secondaryText;
-                line-height: 19px;
+                line-height: rem(19px);
             }
         }
 
         &-chatarea{
-            height: 345px;
+            height: rem(345px);
             overflow-y: scroll;
             width: 100%;
             background-color: $chatarea-bg;
 
             &--chatdetails{
-                padding: 10px 25px;
+                padding: rem(10px) rem(25px);
             }
 
             &--upper{
                 display: flex;
                 align-items: center;
-                margin-top: 20px;
+                margin-top: rem(20px);
             }
 
             &--imagecontainer{
-                width: 18px;
-                height: 18px;
+                width: rem(18px);
+                height: rem(18px);
                 border-radius: 100%;
-                margin-right: 6px;
+                margin-right: rem(6px);
                 overflow: hidden;
             }
 
@@ -129,31 +127,31 @@
 
             &--text{
                 color: $chatarea-text;
-                font-size: 14px;
-                line-height: 18px;
+                font-size: rem(14px);
+                line-height: rem(18px);
             }
 
             &--lower{
                 display: flex;
-                gap: 10px;
+                gap: rem(10px);
                 flex-direction: column;
-                margin-top: 10px;
+                margin-top: rem(10px);
             }
 
             &--first{
                 width: fit-content;
                 background-color: $whiteColor;
-                padding: 15px;
-                border-radius: 20px;
-                border-bottom-left-radius: 3px;
+                padding: rem(15px);
+                border-radius: rem(20px);
+                border-bottom-left-radius: rem(3px);
             }
 
             &--second{
                 width: fit-content;
                 background-color: $whiteColor;
-                padding: 15px;
-                border-radius: 20px;
-                border-top-left-radius: 3px;
+                padding: rem(15px);
+                border-radius: rem(20px);
+                border-top-left-radius: rem(3px);
             }
 
             &--third{
@@ -161,16 +159,16 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
-                gap: 10px;
-                margin: 0 30px;
+                gap: rem(10px);
+                margin: 0 rem(30px);
             }
 
             &--option{
                 background-color: $whiteColor;
-                padding: 4px 15px;
+                padding: rem(4px) rem(15px);
                 color: $footer-link;
-                border: 1px solid $footer-link;
-                border-radius: 15px;
+                border: rem(1px) solid $footer-link;
+                border-radius: rem(15px);
                 cursor: pointer;
             }
 
@@ -181,7 +179,7 @@
             }
 
             &--user{
-                padding: 10px 5px;
+                padding: rem(10px) rem(5px);
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
@@ -189,85 +187,85 @@
 
             &--usertext{
                 color: $whiteColor;
-                font-size: 16px;
-                line-height: 18px;
+                font-size: rem(16px);
+                line-height: rem(18px);
                 background-color: $footer-link;
-                padding: 15px 15px;
+                padding: rem(15px) rem(15px);
                 margin-top: 5px;
-                border-radius: 20px;
-                border-bottom-right-radius: 4px;
+                border-radius: rem(20px);
+                border-bottom-right-radius: rem(4px);
             }
             
             &--fifth{
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
+                gap: rem(10px);
                 display: none;
             }
 
             &--fifthdo{
-                margin-top: 10px;
+                margin-top: rem(10px);
                 background-color: $whiteColor;
-                padding: 15px;
-                border-radius: 20px;
-                border-bottom-left-radius: 3px;
+                padding: rem(15px);
+                border-radius: rem(20px);
+                border-bottom-left-radius: rem(3px);
             }
 
             &--message1, &--message2{
-                margin-top: 10px;
+                margin-top: rem(10px);
             }
 
             &--navigation{
                 width: 100%;
                 margin: 0 auto;
-                height: 50px;
+                height: rem(50px);
                 display: flex;
-                gap: 10px;
+                gap: rem(10px);
                 justify-content: center;
                 align-items: center;
-                margin-top: 10px;
+                margin-top: rem(10px);
             }
 
             &--button1, &--button2{
                 background-color: $whiteColor;
-                padding: 8px 15px;
-                border: 1px solid $footer-link;
+                padding: rem(8px) rem(15px);
+                border: rem(1px) solid $footer-link;
                 outline: none;
-                font-size: 14px;
+                font-size: rem(14px);
                 font-weight: 700;
                 color: $footer-link;
-                border-radius: 20px;
+                border-radius: rem(20px);
                 cursor: pointer;
             }
 
             &--startchat{
                 background-color: $footer-link;
                 color: $whiteColor;
-                padding: 12px 20px;
+                padding: rem(12px) rem(20px);
                 border: 0;
                 outline: none;
-                font-size: 16px;
+                font-size: rem(16px);
                 font-weight: 700;
-                border-radius: 4px;
+                border-radius: rem(4px);
                 cursor: pointer;
             }
         }
 
         &-messages{
             background-color: $whiteColor;
-            border-top: 1px solid $messages-bg;
-            height: 50px;
-            padding-right: 20px;
+            border-top: rem(1px) solid $messages-bg;
+            height: rem(50px);
+            padding-right: rem(20px);
             width: 100%;
             display: flex;
             align-items: center;
 
             &--input{
-                font-size: 16px;
-                line-height: 20px;
+                font-size: rem(16px);
+                line-height: rem(20px);
                 height: 100%;
                 width: 100%;
-                padding: 0 20px;
+                padding: 0 rem(20px);
                 border: 0;
                 background-color: $whiteColor;
             }
@@ -289,15 +287,15 @@
         }
 
         &-footer{
-            font-size: 12px;
-            line-height: 16px;
+            font-size: rem(12px);
+            line-height: rem(16px);
             font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: center;
             border-top: 1px solid $footer-border;
             background-color: $footer-bg;
-            height: 35px;
+            height: rem(35px);
 
             &--text{
                 color: $chat-secondaryText;
@@ -306,6 +304,16 @@
             &--link{
                 text-decoration: none;
                 color: $footer-link;
+            }
+        }
+    }
+}
+
+@media(max-width: rem(990px)){
+    .header{
+        &__container{
+            &-navbar{
+                display: none;
             }
         }
     }
