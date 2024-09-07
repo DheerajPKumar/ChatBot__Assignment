@@ -3,6 +3,7 @@ let popupContainer = document.querySelector(".popup__container");
 let popupiconDiv = document.querySelector(".popup__container-crossicondiv");
 let popupDetails = document.querySelector(".popup__container-details");
 let popupLogo = document.querySelector(".popup__container-logo");
+let scrollContainer = document.querySelector(".chatbox__content-chatarea");
 
 let chatbox = document.querySelector(".chatbox");
 let chaticonDiv = document.querySelector(".chatbox__content-header--crossicon");
@@ -57,6 +58,7 @@ tempEl.addEventListener("click", () => {
     userDiv.appendChild(textdiv);
     chatContainer.appendChild(userDiv);
     leftContainer.style.display = "block";
+    scrollContainer.scrollTop = scrollContainer.scrollHeight;
 });
 
 timeEl.addEventListener("click", () => {
@@ -73,6 +75,7 @@ timeEl.addEventListener("click", () => {
     userDiv.appendChild(textdiv);
     chatContainer.appendChild(userDiv);
     leftContainer.style.display = "block";
+    scrollContainer.scrollTop = scrollContainer.scrollHeight;
 });
 
 windEl.addEventListener("click", () => {
@@ -89,6 +92,7 @@ windEl.addEventListener("click", () => {
     userDiv.appendChild(textdiv);
     chatContainer.appendChild(userDiv);
     leftContainer.style.display = "block";
+    scrollContainer.scrollTop = scrollContainer.scrollHeight;
 });
 
 weatEl.addEventListener("click", () => {
@@ -105,6 +109,7 @@ weatEl.addEventListener("click", () => {
     userDiv.appendChild(textdiv);
     chatContainer.appendChild(userDiv);
     leftContainer.style.display = "block";
+    scrollContainer.scrollTop = scrollContainer.scrollHeight;
 });
 
 optionsEl.addEventListener('click', function(event) {
@@ -203,8 +208,11 @@ sendBtn.addEventListener("click", () => {
                 </div>
             `;
 
+            // scrollContainer.scrollTop = scrollContainer.scrollHeight;
+
             leftContainer.appendChild(userDatadiv);
             leftContainer.appendChild(fetchDataDiv);
+            scrollContainer.scrollTop = scrollContainer.scrollHeight;
 
             let yesBtn = fetchDataDiv.querySelector('.chatbox__content-chatarea--button1');
             let noBtn = fetchDataDiv.querySelector('.chatbox__content-chatarea--button2');
@@ -261,6 +269,7 @@ sendBtn.addEventListener("click", () => {
                             `;
                 
                             leftContainer.appendChild(fetchDataDiv);
+                            scrollContainer.scrollTop = scrollContainer.scrollHeight;
                         });
                         
                     }, 3000);
@@ -283,8 +292,9 @@ sendBtn.addEventListener("click", () => {
 
                     leftContainer.appendChild(fetchDataDiv);
                 });
-
+                
                 leftContainer.appendChild(fetchDataDiv);
+                scrollContainer.scrollTop = scrollContainer.scrollHeight;
             });
 
             noBtn.addEventListener('click', () => {
@@ -328,11 +338,15 @@ sendBtn.addEventListener("click", () => {
                     `;
 
                     leftContainer.appendChild(fetchDataDiv);
+                    scrollContainer.scrollTop = scrollContainer.scrollHeight;
                 });
-
+                
                 leftContainer.appendChild(userDatadiv);
                 leftContainer.appendChild(fetchDataDiv);
+                scrollContainer.scrollTop = scrollContainer.scrollHeight;
             });
+
+            scrollContainer.scrollTop = scrollContainer.scrollHeight;
 
             inputEl.value = "";
             inputEl.setAttribute("disabled", "disabled");
