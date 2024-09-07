@@ -116,8 +116,6 @@ optionsEl.addEventListener('click', function(event) {
         let selectedCategory = event.target.textContent.trim().toLowerCase();
         let finalText = selectedCategory.replace(/^[^\w]+/, '').trim();
         selectedWord = finalText.split(' ')[0];
-
-        // updateSelectedWord(selectedWord);
     }
 });
 
@@ -161,7 +159,6 @@ function fetchWeatherData(type, city, callback) {
             callback(value);
         })
         .catch(error => {
-            // alert("Please enter the Valid city Name");
             validCity();
             console.error('Error fetching the weather data:', error);
         });
@@ -218,7 +215,6 @@ sendBtn.addEventListener("click", () => {
             let noBtn = fetchDataDiv.querySelector('.chatbox__content-chatarea--button2');
 
             yesBtn.addEventListener('click', () => {
-                // resetChatArea();
                 let fetchDataDiv = document.createElement("div");
                 fetchDataDiv.innerHTML = `
                     <div class="chatbox__content-chatarea--fifthup chatbox__content-chatarea--upper">
@@ -239,25 +235,40 @@ sendBtn.addEventListener("click", () => {
 
                 sameCity.addEventListener('click', () => {
                     resetChatArea();
-                    // let word = updateSelectedWord(selectedWord);
-                    // console.log("UPDATESELECTEDWORD", word);
-                    fetchDataDiv.innerHTML = `
-                    <div class="chatbox__content-chatarea--fifthup chatbox__content-chatarea--upper">
-                        <div class="caption__avatar--content chatbox__content-chatarea--imagecontainer">
-                            <img src="./assets/icon.png" alt="logoimage" class="caption__avatar--image chatbox__content-chatarea--image">
-                        </div>
-                        <span class="caption__text chatbox__content-chatarea--text">ChatBot</span>
-                        </div>
-                        <div class="chatbox__content-chatarea--first chatbox__content-chatarea--message1">${weatherData}</div>
-                        <div class="chatbox__content-chatarea--second chatbox__content-chatarea--message2">Looking for more information?</div>
-                        <div class="chatbox__content-chatarea--navigation">
-                            <button type="button" class="chatbox__content-chatarea--button1">Yes</button>
-                            <button type="button" class="chatbox__content-chatarea--button2">No</button>
-                        </div>
-                    `;
-
-                    // leftContainer.appendChild(userDatadiv);
-                    leftContainer.appendChild(fetchDataDiv);
+                    let selectedWord = "";
+                    let optionsEl = document.querySelectorAll(".chatbox__content-chatarea--third");
+                    optionsEl.forEach(option => {
+                        option.addEventListener("click", (event) => {
+                            let selectedCategory = event.target.textContent.trim().toLowerCase();
+                            let finalText = selectedCategory.replace(/^[^\w]+/, '').trim();
+                            selectedWord = finalText.split(' ')[0];
+                            console.log("first", selectedWord);
+                        });
+                    });
+                    
+                    setTimeout(() => {
+                        fetchWeatherData(selectedWord, city, (selectedWord) => {
+                            console.log("inside same fetch", selectedWord);
+                            let fetchDataDiv = document.createElement("div");
+                            fetchDataDiv.innerHTML = `
+                                <div class="chatbox__content-chatarea--fifthup chatbox__content-chatarea--upper">
+                                    <div class="caption__avatar--content chatbox__content-chatarea--imagecontainer">
+                                        <img src="./assets/icon.png" alt="logoimage" class="caption__avatar--image chatbox__content-chatarea--image">
+                                    </div>
+                                    <span class="caption__text chatbox__content-chatarea--text">ChatBot</span>
+                                </div>
+                                <div class="chatbox__content-chatarea--first chatbox__content-chatarea--message1">${selectedWord}</div>
+                                <div class="chatbox__content-chatarea--second chatbox__content-chatarea--message2">Looking for more information?</div>
+                                <div class="chatbox__content-chatarea--navigation">
+                                    <button type="button" class="chatbox__content-chatarea--button1">Yes</button>
+                                    <button type="button" class="chatbox__content-chatarea--button2">No</button>
+                                </div>
+                            `;
+                
+                            leftContainer.appendChild(fetchDataDiv);
+                        });
+                        
+                    }, 3000);
                 });
 
                 otherCity.addEventListener('click', () => {
@@ -331,15 +342,10 @@ sendBtn.addEventListener("click", () => {
             });
 
             inputEl.value = "";
+            inputEl.setAttribute("disabled", "disabled");
         });
-    } else {
-        console.log("ELSE");
     }
 });
-
-// function updateSelectedWord(word) {
-//     selectedWord = word;
-// }
 
 function resetChatArea() {
     chatContainer.style.display = 'none';
@@ -349,141 +355,3 @@ function resetChatArea() {
     optionsEl.style.display = 'flex';
     inputEl.value = '';
 }
-
-// sendBtn.addEventListener("click", () => {
-//     let city = inputText;
-//     fetchWeatherData(selectedWord, city, (weatherData) => {
-//         let userDatadiv = document.createElement("div");
-//         userDatadiv.innerText = "You";
-//         userDatadiv.classList.add("chatbox__content-chatarea--user");
-//         let textdiv = document.createElement("div");
-//         textdiv.innerText = inputText;
-//         textdiv.classList.add("chatbox__content-chatarea--usertext");
-//         userDatadiv.appendChild(textdiv);
-
-//         let fetchDataDiv = document.createElement("div");
-//         fetchDataDiv.innerHTML = `
-//             <div class="chatbox__content-chatarea--fifthup chatbox__content-chatarea--upper">
-//                 <div class="caption__avatar--content chatbox__content-chatarea--imagecontainer">
-//                     <img src="./assets/icon.png" alt="logoimage" class="caption__avatar--image chatbox__content-chatarea--image">
-//                 </div>
-//                 <span class="caption__text chatbox__content-chatarea--text">ChatBot</span>
-//             </div>
-//             <div class="chatbox__content-chatarea--first chatbox__content-chatarea--message1">${weatherData}</div>
-//             <div class="chatbox__content-chatarea--second chatbox__content-chatarea--message2">Looking for more information?</div>
-//             <div class="chatbox__content-chatarea--navigation">
-//                 <button type="button" class="chatbox__content-chatarea--button1">Yes</button>
-//                 <button type="button" class="chatbox__content-chatarea--button2">No</button>
-//             </div>
-//         `;
-
-//         leftContainer.appendChild(userDatadiv);
-//         leftContainer.appendChild(fetchDataDiv);
-//         leftContainer.scrollTop = leftContainer.scrollHeight;
-
-//         let yesBtn = fetchDataDiv.querySelector('.chatbox__content-chatarea--button1');
-//         let noBtn = fetchDataDiv.querySelector('.chatbox__content-chatarea--button2');
-
-//         yesBtn.addEventListener('click', () => {
-//             let fetchDataDiv = document.createElement("div");
-//             fetchDataDiv.innerHTML = `
-//                 <div class="chatbox__content-chatarea--fifthup chatbox__content-chatarea--upper">
-//                     <div class="caption__avatar--content chatbox__content-chatarea--imagecontainer">
-//                         <img src="./assets/icon.png" alt="logoimage" class="caption__avatar--image chatbox__content-chatarea--image">
-//                     </div>
-//                     <span class="caption__text chatbox__content-chatarea--text">ChatBot</span>
-//                 </div>
-//                 <div class="chatbox__content-chatarea--second chatbox__content-chatarea--message2">${city} or Any other city?</div>
-//                 <div class="chatbox__content-chatarea--navigation">
-//                     <button type="button" class="chatbox__content-chatarea--button1">${city}</button>
-//                     <button type="button" class="chatbox__content-chatarea--button2">Other</button>
-//                 </div>
-//             `;
-
-//             let sameCity = fetchDataDiv.querySelector('.chatbox__content-chatarea--button1');
-//             let otherCity = fetchDataDiv.querySelector('.chatbox__content-chatarea--button2');
-
-//             sameCity.addEventListener('click', () => {
-//                 resetChatArea();
-//                 let fetchDataDiv = document.createElement("div");
-//                 fetchDataDiv.innerHTML = `
-//                     <div class="chatbox__content-chatarea--fifthup chatbox__content-chatarea--upper">
-//                         <div class="caption__avatar--content chatbox__content-chatarea--imagecontainer">
-//                             <img src="./assets/icon.png" alt="logoimage" class="caption__avatar--image chatbox__content-chatarea--image">
-//                         </div>
-//                         <span class="caption__text chatbox__content-chatarea--text">ChatBot</span>
-//                     </div>
-//                     <div class="chatbox__content-chatarea--first chatbox__content-chatarea--message1">${weatherData}</div>
-//                     <div class="chatbox__content-chatarea--second chatbox__content-chatarea--message2">Looking for more information?</div>
-//                     <div class="chatbox__content-chatarea--navigation">
-//                         <button type="button" class="chatbox__content-chatarea--button1">Yes</button>
-//                         <button type="button" class="chatbox__content-chatarea--button2">No</button>
-//                     </div>
-//                 `;
-
-//                 leftContainer.appendChild(userDatadiv);
-//                 leftContainer.appendChild(fetchDataDiv);
-//             });
-
-//             otherCity.addEventListener('click', () => {
-//                 resetChatArea();
-//                 console.log("OTHER")
-//                 fetchDataDiv.innerHTML = '';
-//                 fetchDataDiv.innerHTML = `
-//                     <div class="chatbox__content-chatarea--fifthup chatbox__content-chatarea--upper">
-//                         <div class="caption__avatar--content chatbox__content-chatarea--imagecontainer">
-//                             <img src="./assets/icon.png" alt="logoimage" class="caption__avatar--image chatbox__content-chatarea--image">
-//                         </div>
-//                         <span class="caption__text chatbox__content-chatarea--text">ChatBot</span>
-//                     </div>
-//                     <div class="chatbox__content-chatarea--fifthdo">
-//                         'Please enter your city name in the typing area! 😊'
-//                     </div>
-//                 `;
-
-//                 leftContainer.appendChild(fetchDataDiv);
-//                 // resetChatArea();
-//             });
-
-//             leftContainer.appendChild(fetchDataDiv);
-//             leftContainer.scrollTop = leftContainer.scrollHeight;
-//         });
-
-//         noBtn.addEventListener('click', () => {
-//             let userDatadiv = document.createElement("div");
-//             userDatadiv.innerText = "You";
-//             userDatadiv.classList.add("chatbox__content-chatarea--user");
-//             let textdiv = document.createElement("div");
-//             textdiv.innerText = "No";
-//             textdiv.classList.add("chatbox__content-chatarea--usertext");
-//             userDatadiv.appendChild(textdiv);
-
-//             let fetchDataDiv = document.createElement("div");
-//             fetchDataDiv.innerHTML = `
-//                 <div class="chatbox__content-chatarea--fifthup chatbox__content-chatarea--upper">
-//                     <div class="caption__avatar--content chatbox__content-chatarea--imagecontainer">
-//                         <img src="./assets/icon.png" alt="logoimage" class="caption__avatar--image chatbox__content-chatarea--image">
-//                     </div>
-//                     <span class="caption__text chatbox__content-chatarea--text">ChatBot</span>
-//                 </div>
-//                 <div class="chatbox__content-chatarea--first chatbox__content-chatarea--message1">Thank You! 😊</div>
-//                 <div class="chatbox__content-chatarea--navigation">
-//                     <button type="button" class="chatbox__content-chatarea--startchat">Start the chat again</button>
-//                 </div>
-//             `;
-
-//             let chatBtn = fetchDataDiv.querySelector('.chatbox__content-chatarea--startchat');
-
-//             chatBtn.addEventListener('click', () => {
-//                 resetChatArea();
-//                 leftContainer.innerHTML = '';
-//             });
-
-//             leftContainer.appendChild(userDatadiv);
-//             leftContainer.appendChild(fetchDataDiv);
-//             leftContainer.scrollTop = leftContainer.scrollHeight;
-//         });
-
-//         inputEl.value = "";
-//     });
-// });
